@@ -1,0 +1,9 @@
+<%= form_for @recycling_center do |recycling_center| %>
+  <%= recycling_center.label :name %>
+  <%= recycling_center.text_field :name %>
+
+  <%= recycling_center.label :street %>
+  <%= recycling_center.text_field :street %>
+
+  <%= recycling_center.button 'Save' %>
+<% end %>
