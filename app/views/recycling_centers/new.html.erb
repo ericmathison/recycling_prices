@@ -5,6 +5,22 @@
   <%= recycling_center.label :street %>
   <%= recycling_center.text_field :street %>
 
+  <%= recycling_center.label :city %>
+  <%= recycling_center.text_field :city %>
+
+  <%= recycling_center.label :state %>
+  <%= recycling_center.select :state,
+      options_for_select(us_states) %>
+
+  <%= recycling_center.label :zip %>
+  <%= recycling_center.text_field :zip %>
+
+  <%= recycling_center.label :telephone %>
+  <%= recycling_center.text_field :telephone %>
+
+  <%= recycling_center.label :hours %>
+  <%= recycling_center.text_field :hours %>
+
   <%= recycling_center.label :aluminum_price, "Aluminum Price" %>
   <%= recycling_center.text_field :aluminum_price %>
 

@@ -22,8 +22,10 @@ describe RecyclingCentersController do
       end
 
       it 'redirects the user to the show page' do
-        post :create, recycling_center: { name: 'george' }
+        post :create, recycling_center: attributes_for(:recycling_center)
+
         record = RecyclingCenter.last
+
         expect(response.code).to eq('302')
         expect(response).to redirect_to(recycling_center_path(record))
       end
@@ -43,7 +45,7 @@ describe RecyclingCentersController do
 
   describe 'GET show' do
     it 'will display the resource' do
-      record = RecyclingCenter.create
+      record = create(:recycling_center)
       get :show, id: record.id
       expect(response.code).to eq('200')
       expect(assigns[:recycling_center]).to eq(record)

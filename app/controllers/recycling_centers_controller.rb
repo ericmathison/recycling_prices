@@ -20,7 +20,8 @@ class RecyclingCentersController < ApplicationController
 
   def recycling_center_params
     ActionController::Parameters.new(params[:recycling_center] || {})
-                                .permit(:name, :street, :aluminum_price)
+      .permit(:name, :street, :city, :state, :zip, :telephone, :hours,
+              :aluminum_price, :paper_price, :plastic_price, :glass_price)
   end
 
   def recycling_center

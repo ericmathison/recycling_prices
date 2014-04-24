@@ -1,4 +1,14 @@
 <h1><%= @recycling_center.name %></h1>
+
+<h2>Address:</h2>
 <p><%= @recycling_center.street %></p>
+<p><%= @recycling_center.city %>, <%= @recycling_center.state %> <%= @recycling_center.zip %></p>
+
+<h2>Phone Number:</h2>
+<p><%= @recycling_center.telephone %></p>
+
+<h2>Hours:</h2>
+<p><%= @recycling_center.hours %></p>
+
 <h2>Aluminum Price:</h2>
-<p><%= "%01.2f" % @recycling_center.aluminum_price %></p>
+<p><%= "$%01.2f" % @recycling_center.aluminum_price %></p>
