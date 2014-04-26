@@ -8,6 +8,9 @@ class RecyclingCentersController < ApplicationController
     if @recycling_center.save
       redirect_to recycling_center_path(@recycling_center)
     else
+      message = "Recycling Center could not be created."
+      message += " Please make sure all required fields are completed."
+      flash.now[:alert] = message
       render 'new'
     end
   end

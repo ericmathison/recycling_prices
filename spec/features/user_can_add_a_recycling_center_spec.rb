@@ -5,9 +5,11 @@ def step(name, &block)
 end
 
 feature 'A user can add a recycling center' do
-  scenario 'by visiting the new center page' do
+  before do
     visit new_recycling_center_path
+  end
 
+  scenario 'by visiting the new center page' do
     step 'and filling in the form' do
       fill_in 'Name', with: "Al's Recycling"
       fill_in 'Street', with: '123 Long Ln.'
@@ -28,6 +30,18 @@ feature 'A user can add a recycling center' do
        '626-123-1234', '9 to 5', '0.30', '0.05', '0.10', '0.20'].each do |text|
         expect(page).to have_content(text)
       end
+    end
+  end
+
+  scenario 'unless appropriate fields are not filled out' do
+    step "don't fill out any fields" do
+      click_on 'Save'
+    end
+
+    step 'error message is given' do
+      message = "Recycling Center could not be created."
+      message += " Please make sure all required fields are completed."
+      expect(page).to have_content(message)
     end
   end
 end
