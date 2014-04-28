@@ -39,9 +39,13 @@ feature 'A user can add a recycling center' do
     end
 
     step 'error message is given' do
-      message = "Recycling Center could not be created."
-      message += " Please make sure all required fields are completed."
-      expect(page).to have_content(message)
+      expect(page).to have_content("Name can't be blank")
+      expect(page).to have_content("Street can't be blank")
+      expect(page).to have_content("City can't be blank")
+      expect(page).to have_content("State can't be blank")
+      expect(page).to have_content("Zip can't be blank")
+      expect(page).to have_content("Telephone can't be blank")
+      expect(page).to have_content("Hours can't be blank")
     end
   end
 end
