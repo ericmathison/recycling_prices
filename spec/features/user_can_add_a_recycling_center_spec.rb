@@ -1,9 +1,5 @@
 require 'spec_helper'
 
-def step(name, &block)
-  block_given? ? yield : pending
-end
-
 feature 'A user can add a recycling center' do
   before do
     visit new_recycling_center_path

@@ -42,3 +42,7 @@ RSpec.configure do |config|
 
   config.include FactoryGirl::Syntax::Methods
 end
+
+def step(name, &block)
+  block_given? ? yield : pending
+end
