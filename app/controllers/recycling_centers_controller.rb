@@ -16,6 +16,10 @@ class RecyclingCentersController < ApplicationController
     @recycling_center = RecyclingCenter.find(params[:id])
   end
 
+  def edit
+    @recycling_center = RecyclingCenter.find(params[:id])
+  end
+
   private
 
   def recycling_center_params

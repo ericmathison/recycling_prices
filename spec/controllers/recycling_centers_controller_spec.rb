@@ -51,4 +51,13 @@ describe RecyclingCentersController do
       expect(assigns[:recycling_center]).to eq(record)
     end
   end
+
+  describe 'GET edit' do
+    it 'will display the resource' do
+      record = create(:recycling_center)
+      get :edit, id: record.id
+      expect(response.code).to eq('200')
+      expect(assigns[:recycling_center]).to eq(record)
+    end
+  end
 end
