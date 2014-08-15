@@ -32,10 +32,10 @@ feature 'A user can edit an existing recycling center' do
     end
   end
 
-  scenario 'unless appropriate fields are not filled out' do
+  scenario 'appropriate fields are not filled out' do
     pending
 
-    step "don't fill out any fields" do
+    step "clear all fields" do
 
       page.all(:xpath, '//input').each do |field|
         field.set '' unless field[:type].in?(%w[hidden submit])
