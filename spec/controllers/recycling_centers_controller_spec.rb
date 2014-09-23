@@ -64,21 +64,19 @@ describe RecyclingCentersController do
   describe 'PUT update' do
     before do
       @recycling_center = create(:recycling_center)
+      put :update, id: @recycling_center.id, recycling_center: { name: "Joe's New Recycling Center" }
     end
 
     context 'when successful' do
       it 'updates the record' do
-        put :update, id: @recycling_center.id, recycling_center: { name: "Joe's New Recycling Center" }
         expect(RecyclingCenter.find(@recycling_center.id).name).to eq("Joe's New Recycling Center")
       end
 
       it 'redirects the user to the show page' do
-        put :update, id: @recycling_center.id, recycling_center: attributes_for(:recycling_center)
         expect(response).to redirect_to(recycling_center_path(@recycling_center))
       end
 
       it 'assigns the instance variable' do
-        put :update, id: @recycling_center.id, recycling_center: { name: "Joe's New Recycling Center" }
         expect(assigns(:recycling_center)).to eq(@recycling_center)
       end
     end
