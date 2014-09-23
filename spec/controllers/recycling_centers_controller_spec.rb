@@ -61,7 +61,7 @@ describe RecyclingCentersController do
     end
   end
 
-  describe 'POST update' do
+  describe 'PUT update' do
     before do
       @recycling_center = create(:recycling_center)
     end
