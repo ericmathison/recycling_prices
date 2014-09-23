@@ -20,6 +20,15 @@ class RecyclingCentersController < ApplicationController
     @recycling_center = RecyclingCenter.find(params[:id])
   end
 
+  def update
+    @recycling_center = RecyclingCenter.find(params[:id])
+    if @recycling_center.update(recycling_center_params)
+      redirect_to recycling_center_path(@recycling_center)
+    else
+      render 'new'
+    end
+  end
+
   private
 
   def recycling_center_params

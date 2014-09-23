@@ -60,4 +60,32 @@ describe RecyclingCentersController do
       expect(assigns[:recycling_center]).to eq(record)
     end
   end
+
+  describe 'POST update' do
+    before do
+      @recycling_center = create(:recycling_center)
+    end
+
+    context 'when successful' do
+
+      it 'updates the record' do
+        put :update, id: @recycling_center.id, recycling_center: { name: "Joe's New Recycling Center" }
+        expect(RecyclingCenter.find(@recycling_center.id).name).to eq("Joe's New Recycling Center")
+      end
+
+      it 'redirects the user to the show page' do
+        put :update, id: @recycling_center.id, recycling_center: attributes_for(:recycling_center)
+        expect(response).to redirect_to(recycling_center_path(@recycling_center))
+      end
+    end
+  end
+
+  context 'when unsuccessful' do
+    it 're-renders the edit form' do
+      @recycling_center = create(:recycling_center)
+      RecyclingCenter.any_instance.stub(:update).and_return(false)
+      put :update, id: @recycling_center.id, recycling_center: { name: "Bob's Recycling Center" }
+      expect(response).to render_template('new')
+    end
+  end
 end
