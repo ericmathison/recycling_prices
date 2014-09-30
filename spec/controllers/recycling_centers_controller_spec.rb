@@ -87,7 +87,7 @@ describe RecyclingCentersController do
       @recycling_center = create(:recycling_center)
       RecyclingCenter.any_instance.stub(:update).and_return(false)
       put :update, id: @recycling_center.id, recycling_center: { name: "Bob's Recycling Center" }
-      expect(response).to render_template('new')
+      expect(response).to render_template('edit')
     end
   end
 end

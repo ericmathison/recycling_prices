@@ -25,7 +25,7 @@ class RecyclingCentersController < ApplicationController
     if @recycling_center.update(recycling_center_params)
       redirect_to recycling_center_path(@recycling_center)
     else
-      render 'new'
+      render 'edit'
     end
   end
 
