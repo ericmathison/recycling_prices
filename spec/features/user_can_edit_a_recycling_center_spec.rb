@@ -5,14 +5,12 @@ feature 'A user can edit an existing recycling center' do
     visit edit_recycling_center_path(create(:recycling_center))
   end
 
-  scenario 'by visiting the new center page' do
-    pending
-
+  scenario 'by visiting the edit page' do
     step 'and changing values in the form' do
       fill_in 'Name', with: "The Other Guy's Factory"
       fill_in 'Street', with: '500 Long St.'
       fill_in 'City', with: 'Another Town'
-      select 'Alaska', from: 'State'
+      select 'Alaska', from: 'recycling_center_state'
       fill_in 'Zip', with: '99757'
       fill_in 'Telephone', with: '110-395-3982'
       fill_in 'Hours', with: '5 am to 1 pm'
@@ -24,7 +22,7 @@ feature 'A user can edit an existing recycling center' do
     end
 
     step 'takes me to the updated record' do
-      ["The Other Guy's Factory", '500 Long St.', 'Another Town', 'State',
+      ["The Other Guy's Factory", '500 Long St.', 'Another Town', 'AK',
         '99757', '110-395-3982', '5 am to 1 pm', '0.29', '0.03', '0.10',
         '0.21'].each do |text|
         expect(page).to have_content(text)
