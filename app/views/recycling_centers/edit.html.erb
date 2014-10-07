@@ -1,5 +1,7 @@
-<h1>Enter a New Recycling Center</h1>
+<h1>Edit Recycling Center</h1>
 <%= form_for @recycling_center do |f| %>
+
+  <%= render 'errors' %>
 
   <p>
     <%= f.label :name %>

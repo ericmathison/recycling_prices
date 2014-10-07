@@ -1,21 +1,9 @@
 <h1>Enter a New Recycling Center</h1>
 <%= form_for @recycling_center do |recycling_center| %>
-  <% if @recycling_center.errors.any? %>
-    <div id="error_explanation">
-      <h2>
-        <%= pluralize(@recycling_center.errors.count, "error") %>
-        prohibited this recycling center from being added to the list:
-      </h2>
 
-      <ul>
-      <% @recycling_center.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <%= render 'errors' %>
 
-  <p>
+ <p>
     <%= recycling_center.label :name %>
     <%= recycling_center.text_field :name %>
   </p>

@@ -31,8 +31,6 @@ feature 'A user can edit an existing recycling center' do
   end
 
   scenario 'appropriate fields are not filled out' do
-    pending
-
     step "clear all fields" do
 
       page.all(:xpath, '//input').each do |field|
@@ -46,10 +44,7 @@ feature 'A user can edit an existing recycling center' do
       expect(page).to have_content("Name can't be blank")
       expect(page).to have_content("Street can't be blank")
       expect(page).to have_content("City can't be blank")
-      expect(page).to have_content("State can't be blank")
       expect(page).to have_content("Zip can't be blank")
-      expect(page).to have_content("Telephone can't be blank")
-      expect(page).to have_content("Hours can't be blank")
     end
   end
 end
