@@ -1,0 +1,34 @@
+<h1>Recycling Centers</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Street</th>
+    <th>City</th>
+    <th>State</th>
+    <th>Zip</th>
+    <th>Telephone</th>
+    <th>Hours</th>
+    <th>Last Updated</th>
+    <th>Aluminum Price</th>
+    <th>Paper Price</th>
+    <th>Plastic Price</th>
+    <th>Glass Price</th>
+  </tr>
+<% @recycling_centers.each do |recycling_center| %>
+  <tr>
+    <td><%= link_to recycling_center.name, recycling_center_path(recycling_center) %></td>
+    <td><%= recycling_center.street %></td>
+    <td><%= recycling_center.city %></td>
+    <td><%= recycling_center.state %></td>
+    <td><%= recycling_center.zip %></td>
+    <td><%= recycling_center.telephone %></td>
+    <td><%= recycling_center.hours %></td>
+    <td><%= recycling_center.updated_at.strftime('%B %d, %Y') %></td>
+    <td><%= number_to_currency(recycling_center.aluminum_price) %></td>
+    <td><%= number_to_currency(recycling_center.paper_price) %></td>
+    <td><%= number_to_currency(recycling_center.plastic_price) %></td>
+    <td><%= number_to_currency(recycling_center.glass_price) %></td>
+  </tr>
+<% end %>
+</table>

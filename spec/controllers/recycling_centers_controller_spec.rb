@@ -1,6 +1,22 @@
 require 'spec_helper'
 
 describe RecyclingCentersController do
+  describe 'GET index' do
+    before do
+      @recycling_center = create(:recycling_center)
+      @recycling_center2 = create(:recycling_center2)
+      get :index
+    end
+
+    it 'successfully responds to request' do
+      expect(response.code).to eq('200')
+    end
+
+    it 'assigns records to the instance variable' do
+      expect(assigns(:recycling_centers)).to match_array([@recycling_center, @recycling_center2])
+    end
+  end
+
   describe 'GET new' do
     it 'successfully returns a new form' do
       get :new

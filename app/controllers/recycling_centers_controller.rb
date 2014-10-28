@@ -1,4 +1,8 @@
 class RecyclingCentersController < ApplicationController
+  def index
+    @recycling_centers = RecyclingCenter.first(75)
+  end
+
   def new
     @recycling_center = recycling_center
   end
