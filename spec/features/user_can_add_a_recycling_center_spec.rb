@@ -2,7 +2,8 @@ require 'spec_helper'
 
 feature 'A user can add a recycling center' do
   before do
-    visit new_recycling_center_path
+    visit root_path
+    click_on 'Add a new recycling center'
   end
 
   scenario 'by visiting the new center page' do
