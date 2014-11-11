@@ -1,0 +1,10 @@
+// "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "recycling_center";
+
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
