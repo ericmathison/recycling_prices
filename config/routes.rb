@@ -6,6 +6,7 @@ RecyclingPrices::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'recycling_centers#index'
+  post 'recycling_centers/search' => 'recycling_centers#search', as: :recycling_centers_search
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

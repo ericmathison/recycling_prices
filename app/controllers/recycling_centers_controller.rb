@@ -33,6 +33,11 @@ class RecyclingCentersController < ApplicationController
     end
   end
 
+  def search
+    @recycling_centers = RecyclingCenter.where("substring(zip, '..') = ?",
+                                               params[:zip][0..1])
+  end
+
   private
 
   def recycling_center_params

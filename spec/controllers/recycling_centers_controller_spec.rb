@@ -116,4 +116,19 @@ describe RecyclingCentersController do
       end
     end
   end
+
+  describe 'POST search' do
+    it 'renders the search results' do
+      post :search, zip: attributes_for(:recycling_center)[:zip]
+      expect(response).to render_template('search')
+    end
+
+    it "assigns records where first two digits of zip match" do
+      @recycling_center = create(:recycling_center)
+      @recycling_center2 = create(:recycling_center2)
+      post :search, zip: attributes_for(:recycling_center)[:zip]
+      expect(assigns(:recycling_centers)).to match_array([@recycling_center])
+      expect(assigns(:recycling_centers)).to_not include(@recycling_center2)
+    end
+  end
 end
