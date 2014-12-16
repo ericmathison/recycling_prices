@@ -1,0 +1,7 @@
+- if @recycling_center.errors.any?
+  #error_explanation
+    %h2
+      = pluralize(@recycling_center.errors.count, "error")
+      = "prohibited this recycling center from being added to the list:"
+    - @recycling_center.errors.full_messages.each do |msg|
+      %li= msg

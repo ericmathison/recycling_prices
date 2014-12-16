@@ -1,0 +1,25 @@
+%h1= @recycling_center.name
+
+%h2 Address:
+%p= @recycling_center.street
+%p= "#{@recycling_center.city}, #{@recycling_center.state} #{@recycling_center.zip}"
+
+%h2 Phone Number:
+%p= @recycling_center.telephone
+
+%h2 Hours:
+%p= @recycling_center.hours
+
+%h2 Aluminum Price:
+%p= "$%01.2f" % @recycling_center.aluminum_price
+
+%h2 Paper Price:
+%p= "$%01.2f" % @recycling_center.paper_price
+
+%h2 Plastic Price:
+%p= "$%01.2f" % @recycling_center.plastic_price
+
+%h2 Glass Price:
+%p= "$%01.2f" % @recycling_center.glass_price
+
+%p= link_to "Edit", edit_recycling_center_path
