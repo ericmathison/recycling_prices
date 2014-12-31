@@ -48,6 +48,7 @@ end
 # gem 'debugger', group: [:development, :test]
 
 gem 'haml'
+gem 'paper_trail'
 
 group :development, :test do
   gem 'rspec-rails'

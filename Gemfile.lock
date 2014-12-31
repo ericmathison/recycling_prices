@@ -75,6 +75,9 @@ GEM
       mini_portile (= 0.6.0)
     nokogiri (1.6.2.1-x86-mingw32)
       mini_portile (= 0.6.0)
+    paper_trail (3.0.6)
+      activerecord (>= 3.0, < 5.0)
+      activesupport (>= 3.0, < 5.0)
     pg (0.17.0)
     pg (0.17.0-x86-mingw32)
     polyglot (0.3.3)
@@ -154,6 +157,7 @@ DEPENDENCIES
   haml
   jbuilder (~> 1.2)
   jquery-rails
+  paper_trail
   pg
   rails (= 4.0.1)
   rspec-rails
