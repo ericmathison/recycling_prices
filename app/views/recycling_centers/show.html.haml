@@ -11,15 +11,15 @@
 %p= @recycling_center.hours
 
 %h2 Aluminum Price:
-%p= "$%01.2f" % @recycling_center.aluminum_price
+%p= @recycling_center.aluminum_price && "$%01.2f" % @recycling_center.aluminum_price
 
 %h2 Paper Price:
-%p= "$%01.2f" % @recycling_center.paper_price
+%p= @recycling_center.paper_price && "$%01.2f" % @recycling_center.paper_price
 
 %h2 Plastic Price:
-%p= "$%01.2f" % @recycling_center.plastic_price
+%p= @recycling_center.plastic_price && "$%01.2f" % @recycling_center.plastic_price
 
 %h2 Glass Price:
-%p= "$%01.2f" % @recycling_center.glass_price
+%p= @recycling_center.glass_price && "$%01.2f" % @recycling_center.glass_price
 
 %p= link_to "Edit", edit_recycling_center_path
