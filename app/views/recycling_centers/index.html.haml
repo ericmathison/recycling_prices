@@ -19,15 +19,15 @@
     %th Glass Price
   - @recycling_centers.each do |recycling_center|
     %tr
-      %th= link_to recycling_center.name, recycling_center_path(recycling_center)
-      %th= recycling_center.street
-      %th= recycling_center.city
-      %th= recycling_center.state
-      %th= recycling_center.zip
-      %th= recycling_center.telephone
-      %th= recycling_center.hours
-      %th= recycling_center.updated_at.strftime('%B %d, %Y')
-      %th= number_to_currency(recycling_center.aluminum_price)
-      %th= number_to_currency(recycling_center.paper_price)
-      %th= number_to_currency(recycling_center.plastic_price)
-      %th= number_to_currency(recycling_center.glass_price)
+      %td= link_to recycling_center.name, recycling_center_path(recycling_center)
+      %td= recycling_center.street
+      %td= recycling_center.city
+      %td= recycling_center.state
+      %td= recycling_center.zip
+      %td= recycling_center.telephone
+      %td= recycling_center.hours
+      %td= recycling_center.updated_at.strftime('%B %d, %Y')
+      %td= number_to_currency(recycling_center.aluminum_price)
+      %td= number_to_currency(recycling_center.paper_price)
+      %td= number_to_currency(recycling_center.plastic_price)
+      %td= number_to_currency(recycling_center.glass_price)
