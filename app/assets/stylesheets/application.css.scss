@@ -12,3 +12,13 @@
 body {
   background: #92d666;
 }
+
+.main-title {
+  text-align: center;
+  a {
+    color: #51789E; 
+    &:hover {
+      text-decoration: none;
+    }
+}
+}
