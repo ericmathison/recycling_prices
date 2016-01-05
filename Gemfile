@@ -55,3 +55,10 @@ group :development, :test do
   gem 'capybara'
   gem 'factory_girl_rails'
 end
+
+group :development do
+  gem 'better_errors', group: :development
+
+  # needed for better_errors repl
+  gem "binding_of_caller"
+end
