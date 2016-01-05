@@ -6,14 +6,13 @@
     = javascript_include_tag "application", "data-turbolinks-track" => true
     = csrf_meta_tags
   %body
-    .container-fluid
-      %h1.main-title
-        = link_to 'Recycling Centers', root_path
-      - flash.each do |name, msg|
-        = content_tag :div, msg, class: name
+    %h1.main-title
+      = link_to 'Recycling Centers', root_path
+    - flash.each do |name, msg|
+      = content_tag :div, msg, class: name
 
-      = yield
+    = yield
 
-      .row
-        .col-sm-12
-          %p.small.text-center Send feedback to dev at ekmathison dot com
+    .row
+      .col-sm-12
+        %p.small.text-center Send feedback to dev at ekmathison dot com
