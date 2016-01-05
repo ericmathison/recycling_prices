@@ -1,50 +1,51 @@
-= form_for(@recycling_center, html: { class: 'form-horizontal'}) do |f|
-  = render 'errors'
-  .form-group
-    = f.label :name, class: 'control-label col-sm-2' 
-    .col-sm-10
-      = f.text_field :name, placeholder: 'Name'
-  .form-group
-    = f.label :street, class: 'control-label col-sm-2'
-    .col-sm-10
-      = f.text_field :street, placeholder: 'Street'
-  .form-group
-    = f.label :city, class: 'control-label col-sm-2'
-    .col-sm-10
-      = f.text_field :city, placeholder: 'City'
-  .form-group
-    = f.label :state, class: 'control-label col-sm-2'
-    .col-sm-10
-      = f.select :state,
-      options_for_select(us_states), prompt: '-- Select a State --'
-  .form-group
-    = f.label :zip, class: 'control-label col-sm-2'
-    .col-sm-10
-      = f.text_field :zip, placeholder: 'Zip'
-  .form-group
-    = f.label :telephone, class: 'control-label col-sm-2'
-    .col-sm-10
-      = f.text_field :telephone, placeholder: 'Telephone'
-  .form-group
-    = f.label :hours, class: 'control-label col-sm-2'
-    .col-sm-10
-      = f.text_field :hours, placeholder: 'Hours'
-  .form-group
-    = f.label :aluminum_price, "Aluminum Price", class: 'control-label col-sm-2'
-    .col-sm-10
-      = f.text_field :aluminum_price, placeholder: 'Aluminum Price'
-  .form-group
-    = f.label :paper_price, "Paper Price", class: 'control-label col-sm-2'
-    .col-sm-10
-      = f.text_field :paper_price, placeholder: 'Paper Price'
-  .form-group
-    = f.label :plastic_price, "Plastic Price", class: 'control-label col-sm-2'
-    .col-sm-10
-      = f.text_field :plastic_price, placeholder: 'Plastic Price'
-  .form-group
-    = f.label :glass_price, "Glass Price", class: 'control-label col-sm-2'
-    .col-sm-10
-      = f.text_field :glass_price, placeholder: 'Glass Price'
-  .form-group
-    .col-sm-offset-2.col-sm-10
-      = f.submit 'Save', class: 'btn btn-default'
+.col-sm-8.col-sm-offset-1
+  = form_for(@recycling_center, html: { class: 'form-horizontal'}) do |f|
+    = render 'errors'
+    .form-group
+      = f.label :name, class: 'control-label col-sm-2'
+      .col-sm-6
+        = f.text_field :name, placeholder: 'Name', class: 'form-control'
+    .form-group
+      = f.label :street, class: 'control-label col-sm-2'
+      .col-sm-6
+        = f.text_field :street, placeholder: 'Street', class: 'form-control'
+    .form-group
+      = f.label :city, class: 'control-label col-sm-2'
+      .col-sm-6
+        = f.text_field :city, placeholder: 'City', class: 'form-control'
+    .form-group
+      = f.label :state, class: 'control-label col-sm-2'
+      .col-sm-6
+        = f.select :state,
+          options_for_select(us_states), {prompt: '-- Select a State --'}, {class: 'form-control'}
+    .form-group
+      = f.label :zip, class: 'control-label col-sm-2'
+      .col-sm-6
+        = f.text_field :zip, placeholder: 'Zip', class: 'form-control'
+    .form-group
+      = f.label :telephone, class: 'control-label col-sm-2'
+      .col-sm-6
+        = f.text_field :telephone, placeholder: 'Telephone', class: 'form-control'
+    .form-group
+      = f.label :hours, class: 'control-label col-sm-2'
+      .col-sm-6
+        = f.text_field :hours, placeholder: 'Hours', class: 'form-control'
+    .form-group
+      = f.label :aluminum_price, "Aluminum Price", class: 'control-label col-sm-2'
+      .col-sm-6
+        = f.text_field :aluminum_price, placeholder: 'Aluminum Price', class: 'form-control'
+    .form-group
+      = f.label :paper_price, "Paper Price", class: 'control-label col-sm-2'
+      .col-sm-6
+        = f.text_field :paper_price, placeholder: 'Paper Price', class: 'form-control'
+    .form-group
+      = f.label :plastic_price, "Plastic Price", class: 'control-label col-sm-2'
+      .col-sm-6
+        = f.text_field :plastic_price, placeholder: 'Plastic Price', class: 'form-control'
+    .form-group
+      = f.label :glass_price, "Glass Price", class: 'control-label col-sm-2'
+      .col-sm-6
+        = f.text_field :glass_price, placeholder: 'Glass Price', class: 'form-control'
+    .form-group
+      .col-sm-offset-2.col-sm-6
+        = f.submit 'Save', class: 'btn btn-default'
