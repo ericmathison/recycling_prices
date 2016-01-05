@@ -1,32 +1,36 @@
-= link_to 'Add a new recycling center', new_recycling_center_path
-= form_tag recycling_centers_search_path do
-  = text_field_tag "zip", "Enter Zip Code", id: "recycling_center_search"
-  = submit_tag "Search"
-%table
-  %tr
-    %th Name
-    %th Street
-    %th City
-    %th State
-    %th Zip
-    %th Telephone
-    %th Hours
-    %th Last Updated
-    %th Aluminum Price
-    %th Paper Price
-    %th Plastic Price
-    %th Glass Price
-  - @recycling_centers.each do |recycling_center|
+.row
+  .col-lg-3.col-lg-offset-5.home-actions
+    .form-group
+      = form_tag recycling_centers_search_path, class: 'form-inline' do
+        = text_field_tag "zip", "Enter Zip Code", id: "recycling_center_search", class: 'form-control'
+        = submit_tag "Search", class: 'btn'
+    = link_to 'Add a new recycling center', new_recycling_center_path, class: 'btn btn-primary'
+.row
+  %table
     %tr
-      %td= link_to recycling_center.name, recycling_center_path(recycling_center)
-      %td= recycling_center.street
-      %td= recycling_center.city
-      %td= recycling_center.state
-      %td= recycling_center.zip
-      %td= recycling_center.telephone
-      %td= recycling_center.hours
-      %td= recycling_center.updated_at.strftime('%B %d, %Y')
-      %td= number_to_currency(recycling_center.aluminum_price)
-      %td= number_to_currency(recycling_center.paper_price)
-      %td= number_to_currency(recycling_center.plastic_price)
-      %td= number_to_currency(recycling_center.glass_price)
+      %th Name
+      %th Street
+      %th City
+      %th State
+      %th Zip
+      %th Telephone
+      %th Hours
+      %th Last Updated
+      %th Aluminum Price
+      %th Paper Price
+      %th Plastic Price
+      %th Glass Price
+    - @recycling_centers.each do |recycling_center|
+      %tr
+        %td= link_to recycling_center.name, recycling_center_path(recycling_center)
+        %td= recycling_center.street
+        %td= recycling_center.city
+        %td= recycling_center.state
+        %td= recycling_center.zip
+        %td= recycling_center.telephone
+        %td= recycling_center.hours
+        %td= recycling_center.updated_at.strftime('%B %d, %Y')
+        %td= number_to_currency(recycling_center.aluminum_price)
+        %td= number_to_currency(recycling_center.paper_price)
+        %td= number_to_currency(recycling_center.plastic_price)
+        %td= number_to_currency(recycling_center.glass_price)
