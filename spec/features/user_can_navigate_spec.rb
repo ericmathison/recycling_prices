@@ -12,7 +12,7 @@ feature 'Basic navgation: ' do
 
     expect(current_path).to_not eq(root_path)
 
-    click_on 'Recycling Centers'
+    click_on 'Recycling Prices'
 
     expect(current_path).to eq(root_path)
   end
