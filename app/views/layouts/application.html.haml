@@ -7,7 +7,8 @@
     = csrf_meta_tags
   %body
     %h1.main-title
-      = link_to 'Recycling Centers', root_path
+      = link_to 'Recycling Prices', root_path
+    %h3.text-center Find recycling centers with the best redemption prices
     - flash.each do |name, msg|
       = content_tag :div, msg, class: name
 
