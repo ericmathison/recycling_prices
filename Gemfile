@@ -61,10 +61,6 @@ end
 gem 'database_cleaner', group: :test
 
 group :development do
-  gem 'better_errors'
-
-  # needed for better_errors repl
-  gem "binding_of_caller"
-
+  gem 'web-console', '~> 2.0'
   gem 'spring'
 end
