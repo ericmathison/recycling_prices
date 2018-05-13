@@ -58,6 +58,8 @@ group :development, :test do
   gem 'factory_girl_rails'
 end
 
+gem 'database_cleaner', group: :test
+
 group :development do
   gem 'better_errors'
 
