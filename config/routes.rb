@@ -1,4 +1,4 @@
-RecyclingPrices::Application.routes.draw do
+Rails.application.routes.draw do
   resources :recycling_centers
 
   # The priority is based upon order of creation: first created -> highest priority.
