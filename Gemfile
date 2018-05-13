@@ -58,8 +58,10 @@ group :development, :test do
 end
 
 group :development do
-  gem 'better_errors', group: :development
+  gem 'better_errors'
 
   # needed for better_errors repl
   gem "binding_of_caller"
+
+  gem 'spring'
 end
