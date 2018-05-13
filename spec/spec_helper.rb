@@ -39,6 +39,8 @@ RSpec.configure do |config|
   config.include FactoryGirl::Syntax::Methods
 end
 
+Capybara.javascript_driver = :webkit
+
 def step(name, &block)
   block_given? ? yield : pending
 end
