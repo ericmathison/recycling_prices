@@ -29,7 +29,7 @@ describe RecyclingCentersController, type: :controller do
     context 'when successful' do
       it 'creates the record' do
         recycling_center_double = double(RecyclingCenter, save: true)
-        controller.stub(:recycling_center).and_return(recycling_center_double)
+        allow(controller).to receive(:recycling_center).and_return(recycling_center_double)
 
         post :create, recycling_center: { name: 'george' }
 
@@ -50,7 +50,7 @@ describe RecyclingCentersController, type: :controller do
       let(:recycling_center_double) { double(RecyclingCenter, save: false) }
 
       before do
-        controller.stub(:recycling_center).and_return(recycling_center_double)
+        allow(controller).to receive(:recycling_center).and_return(recycling_center_double)
       end
 
       it 're-renders the new form' do
@@ -102,7 +102,7 @@ describe RecyclingCentersController, type: :controller do
 
     context 'failure' do
       it 're-renders the edit form' do
-        RecyclingCenter.any_instance.stub(:update).and_return(false)
+        allow_any_instance_of(RecyclingCenter).to receive(:update).and_return(false)
         put :update, id: @recycling_center.id,
           recycling_center: { name: "Bob's Recycling Center" }
         expect(response).to render_template('edit')
