@@ -31,13 +31,13 @@ describe RecyclingCentersController, type: :controller do
         recycling_center_double = double(RecyclingCenter, save: true)
         allow(controller).to receive(:recycling_center).and_return(recycling_center_double)
 
-        post :create, recycling_center: { name: 'george' }
+        post :create, params: { recycling_center: { name: 'george' } }
 
         expect(recycling_center_double).to have_received(:save)
       end
 
       it 'redirects the user to the show page' do
-        post :create, recycling_center: attributes_for(:recycling_center)
+        post :create, params: { recycling_center: attributes_for(:recycling_center) }
 
         record = RecyclingCenter.last
 
@@ -54,7 +54,7 @@ describe RecyclingCentersController, type: :controller do
       end
 
       it 're-renders the new form' do
-        post :create, recycling_center: { name: 'george' }
+        post :create, params: { recycling_center: { name: 'george' } }
         expect(recycling_center_double).to have_received(:save)
         expect(response).to render_template('new')
       end
@@ -64,7 +64,7 @@ describe RecyclingCentersController, type: :controller do
   describe 'GET show' do
     it 'will display the resource' do
       record = create(:recycling_center)
-      get :show, id: record.id
+      get :show, params: { id: record.id }
       expect(response.code).to eq('200')
       expect(assigns[:recycling_center]).to eq(record)
     end
@@ -73,7 +73,7 @@ describe RecyclingCentersController, type: :controller do
   describe 'GET edit' do
     it 'will display the resource' do
       record = create(:recycling_center)
-      get :edit, id: record.id
+      get :edit, params: { id: record.id }
       expect(response.code).to eq('200')
       expect(assigns[:recycling_center]).to eq(record)
     end
@@ -82,8 +82,8 @@ describe RecyclingCentersController, type: :controller do
   describe 'PUT update' do
     before do
       @recycling_center = create(:recycling_center)
-      put :update, id: @recycling_center.id,
-        recycling_center: { name: "Joe's New Recycling Center" }
+      put :update, params: { id: @recycling_center.id,
+        recycling_center: { name: "Joe's New Recycling Center" } }
     end
 
     context 'success' do
@@ -103,15 +103,15 @@ describe RecyclingCentersController, type: :controller do
     context 'failure' do
       it 're-renders the edit form' do
         allow_any_instance_of(RecyclingCenter).to receive(:update).and_return(false)
-        put :update, id: @recycling_center.id,
-          recycling_center: { name: "Bob's Recycling Center" }
+        put :update, params: { id: @recycling_center.id,
+          recycling_center: { name: "Bob's Recycling Center" } }
         expect(response).to render_template('edit')
       end
 
       it "won't allow removing existing state field" do
         original_state = @recycling_center.state
-        put :update, id: @recycling_center.id,
-          recycling_center: attributes_for(:recycling_center).except(:state)
+        put :update, params: { id: @recycling_center.id,
+          recycling_center: attributes_for(:recycling_center).except(:state) }
         expect(RecyclingCenter.find(@recycling_center.id).state).to eq(original_state)
       end
     end
@@ -119,14 +119,14 @@ describe RecyclingCentersController, type: :controller do
 
   describe 'POST search' do
     it 'renders the search results' do
-      post :search, zip: attributes_for(:recycling_center)[:zip]
+      post :search, params: { zip: attributes_for(:recycling_center)[:zip] }
       expect(response).to render_template('search')
     end
 
     it 'assigns records where first two digits of zip match' do
       @recycling_center = create(:recycling_center)
       @recycling_center2 = create(:recycling_center2)
-      post :search, zip: attributes_for(:recycling_center)[:zip]
+      post :search, params: { zip: attributes_for(:recycling_center)[:zip] }
       expect(assigns(:recycling_centers)).to match_array([@recycling_center])
       expect(assigns(:recycling_centers)).to_not include(@recycling_center2)
     end
