@@ -62,6 +62,6 @@ end
 gem 'database_cleaner', group: :test
 
 group :development do
-  gem 'web-console', '~> 2.0'
+  gem 'web-console'
   gem 'spring'
 end
