@@ -7,7 +7,7 @@ gem 'autoprefixer-rails'
 gem 'rails', '~> 4.2.0'
 
 # Use postgresql as the database for Active Record
-gem 'pg'
+gem 'pg', '~> 0.0'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0'

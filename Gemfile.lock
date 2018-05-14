@@ -105,8 +105,8 @@ GEM
     paper_trail (3.0.6)
       activerecord (>= 3.0, < 5.0)
       activesupport (>= 3.0, < 5.0)
-    pg (0.17.0)
-    pg (0.17.0-x86-mingw32)
+    pg (0.21.0)
+    pg (0.21.0-x86-mingw32)
     rack (1.6.10)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -212,7 +212,7 @@ DEPENDENCIES
   jbuilder (~> 1.2)
   jquery-rails
   paper_trail
-  pg
+  pg (~> 0.0)
   rails (~> 4.2.0)
   rake (~> 11.0)
   rspec-rails
