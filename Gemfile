@@ -52,7 +52,7 @@ gem 'paper_trail'
 gem 'rake', '~> 11.0'
 
 group :development, :test do
-  gem 'rspec-rails', '~> 2.0'
+  gem 'rspec-rails'
   gem 'capybara'
   gem 'capybara-webkit'
   gem 'factory_girl_rails'

@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe RecyclingCentersController do
+describe RecyclingCentersController, type: :controller do
   describe 'GET index' do
     before do
       @recycling_center = create(:recycling_center)
