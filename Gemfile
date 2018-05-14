@@ -50,6 +50,7 @@ end
 gem 'haml'
 gem 'paper_trail'
 gem 'rake', '~> 11.0'
+gem 'puma'
 
 group :development, :test do
   gem 'rspec-rails'
