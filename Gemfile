@@ -49,7 +49,7 @@ end
 
 gem 'haml'
 gem 'paper_trail'
-gem 'rake', '~> 11.0'
+gem 'rake'
 gem 'puma'
 
 group :development, :test do
